@@ -35,6 +35,8 @@ which would enable the plugin and configure it to look for any class extending `
 ```js
 {
   "plugins": [
+    // either the preset es2015 or at least the following
+    "babel-plugin-transform-es2015-classes",
     ["babel-plugin-transform-builtin-classes", {
       "globals": ["Array", "Error", "HTMLElement"]
     }]

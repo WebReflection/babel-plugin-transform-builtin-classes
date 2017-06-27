@@ -2,7 +2,7 @@
   "plugins": [
     [
       "babel-plugin-transform-es2015-classes",
-      "babel-plugin-transform-builtin-classes", {
+      ["babel-plugin-transform-builtin-classes", {
         "build": "JSON.stringify(Object.getOwnPropertyNames(window).filter(name => /^[A-Z]/.test(name)).sort(), null, '  ')",
         "globals": [
           "AnalyserNode",
@@ -534,7 +534,7 @@
           "XPathResult",
           "XSLTProcessor"
         ]
-      }
+      }]
     ]
   ]
 }
