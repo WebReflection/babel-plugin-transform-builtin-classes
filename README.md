@@ -8,7 +8,7 @@ This transformer aim is to fix once forever problems with native extends and Cus
 ```js
 // finally fixed
 class List extends Array {}
-console.assert(new List instanceof Array);
+console.assert(new List instanceof List);
 
 // finally fixed too
 class MyElement extends HTMLElement {
@@ -36,7 +36,7 @@ which would enable the plugin and configure it to look for any class extending `
 {
   "plugins": [
     ["babel-plugin-transform-builtin-classes", {
-      "globals": ["Error", "Array"]
+      "globals": ["Array", "Error", "HTMLElement"]
     }]
   ]
 }
