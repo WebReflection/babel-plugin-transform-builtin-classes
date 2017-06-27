@@ -57,9 +57,10 @@ export default function (babel) {
       ClassDeclaration(path) {
         const {node} = path;
         if (!node[VISITED] && needsWrapping(path, this.opts.globals)) {
+          const name = getName(path);
           const ref = node.id || path.scope.generateUidIdentifier('class');
           path.replaceWith(t.variableDeclaration('let', [
-            t.variableDeclarator(ref, t.callExpression(getName(path), [
+            t.variableDeclarator(ref, t.callExpression(name, [
               t.toExpression(node)
             ])),
           ]));
@@ -69,8 +70,8 @@ export default function (babel) {
       ClassExpression(path) {
         const {node} = path;
         if (!node[VISITED] && needsWrapping(path, this.opts.globals)) {
-          node[VISITED] = true;
-          path.replaceWith(t.callExpression(getName(path), [
+          const name = getName(path);
+          path.replaceWith(t.callExpression(name, [
             t.toExpression(node)
           ]));
         }
