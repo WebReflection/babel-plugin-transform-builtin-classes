@@ -14,9 +14,8 @@
   ],
   "main": "lib",
   "scripts": {
-    "build": "babel src -d lib && cp babelrc lib/.babelrc",
+    "build": "babel src -d lib && cp .babelrc lib/.babelrc",
     "watch": "babel src -d lib -w",
-    "prepublish": "npm run build",
     "test": "echo 'Coming soon...'; exit 0"
   },
   "repository": {

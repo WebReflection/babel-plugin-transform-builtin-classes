@@ -1,4 +1,5 @@
 /src
 /node_modules
 /test
-/babelrc
+.babelrc
+.gitignore
