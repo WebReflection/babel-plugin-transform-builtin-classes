@@ -21,7 +21,7 @@ var HELPER = (function (O) {
       Class,
       sPO(
         function Super() {
-          return construct(Parent, arguments, Class);
+          return construct(Parent, arguments, gPO(this).constructor);
         },
         Parent
       )
