@@ -14,10 +14,9 @@
   ],
   "main": "lib",
   "scripts": {
-    "babel": "node test/index.js",
-    "build": "babel src -d lib && cp .babelrc lib/.babelrc && npm test",
+    "build": "babel src -d lib && cp .babelrc lib/.babelrc",
     "watch": "babel src -d lib -w",
-    "test": "node test/test.js && npm run babel && node test/test.es5.js"
+    "test": "node test/test.js && npm run build && node test/index.js && node test/test.es5.js"
   },
   "repository": {
     "type": "git",
