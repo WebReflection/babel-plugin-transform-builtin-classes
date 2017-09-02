@@ -53,6 +53,9 @@ export default function (babel) {
   };
 
   return {
+    pre() {
+      name = null;
+    },
     visitor: {
       ClassDeclaration(path) {
         const {node} = path;
@@ -77,6 +80,9 @@ export default function (babel) {
         }
         node[VISITED] = true;
       },
+    },
+    post() {
+      if (name) console.info(' ✔ builtin extends patched');
     }
   };
 
