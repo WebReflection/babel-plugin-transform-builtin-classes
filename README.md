@@ -32,7 +32,7 @@ document.body.appendChild(node);
 ## Usage
 
 In your Babel 6 configuration, for example in a `.babelrc` you might have the following,
-which would enable the plugin and configure it to look for any class extending `Error` or `Array` globals.
+which would enable the plugin and configure it to look for any class extending `HTMLElement`, `Error` or `Array` globals.
 
 ```js
 {
@@ -45,6 +45,8 @@ which would enable the plugin and configure it to look for any class extending `
   ]
 }
 ```
+
+**However**, you can find all known Chrome browser classes already listed in the file `lib/.babelrc` too.
 
 #### Rollup
 
@@ -60,9 +62,6 @@ In this case you might need to invert the plugins order:
   ]
 }
 ```
-
-
-**However**, you can find all known Chrome browser classes already listed in the file `lib/.babelrc` too.
 
 
 ### Compatibility
