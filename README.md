@@ -46,6 +46,22 @@ which would enable the plugin and configure it to look for any class extending `
 }
 ```
 
+#### Rollup
+
+In this case you might need to invert the plugins order:
+```js
+{
+  plugins: [
+    ['transform-builtin-classes', {
+      globals: ['HTMLElement']
+    }],
+    'transform-es2015-classes'
+    // ... others ...
+  ]
+}
+```
+
+
 **However**, you can find all known Chrome browser classes already listed in the file `lib/.babelrc` too.
 
 
