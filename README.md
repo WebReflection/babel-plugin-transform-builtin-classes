@@ -68,3 +68,23 @@ In this case you might need to invert the plugins order:
 This transformer works on IE11 and every other browser with `Object.setPrototypeOf` or `__proto__` as fallback.
 
 There is **NO IE <= 10 support**. If you need IE <= 10 don't use this plugin and/or don't extend natives (recommended).
+
+
+### About `logIfPatched` option
+If you'd like to have a visual feedback when patched classes are encountered,
+use the `logIfPatched: true` option.
+
+```js
+{
+  "plugins": [
+    ['transform-builtin-classes', {
+      globals: ['Array'],
+      logIfPatched: true
+    }]
+  ]
+}
+```
+
+This will output `✔ builtin extends patched` whenever a class is found.
+
+Please note if you are piping _babel_ output directly the log will interfere with the produced output.

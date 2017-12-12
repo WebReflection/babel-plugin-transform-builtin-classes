@@ -83,9 +83,7 @@ export default function (babel) {
     post() {
       if (
         name &&
-        typeof process === 'object' &&
-        process.argv.some(a => /^-d|-o|--out-dir|--out-file$/.test(a)) &&
-        !process.argv.some(a => /^-q|--quiet$/.test(a))
+        this.opts.logIfPatched
       ) console.info(' ✔ builtin extends patched');
     }
   };

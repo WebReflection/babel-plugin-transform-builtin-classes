@@ -3,7 +3,8 @@ require('babel-core').transformFile(
   {
     "plugins": [
       [require('../lib/index.js').default, {
-        globals: ['Array']
+        globals: ['Array'],
+        logIfPatched: true
       }]
     ]
   },
