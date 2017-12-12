@@ -84,7 +84,7 @@ export default function (babel) {
       if (
         name &&
         this.opts.logIfPatched
-      ) console.info(' ✔ builtin extends patched');
+      ) console.warn(' ✔ builtin extends patched');
     }
   };
 

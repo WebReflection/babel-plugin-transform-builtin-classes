@@ -85,6 +85,4 @@ use the `logIfPatched: true` option.
 }
 ```
 
-This will output `✔ builtin extends patched` whenever a class is found.
-
-Please note if you are piping _babel_ output directly the log will interfere with the produced output.
+This will output (as `console.warn`) `✔ builtin extends patched` whenever a class is found.
