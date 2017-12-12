@@ -3,7 +3,6 @@ import template from 'babel-template';
 const fixAsTemplate = template(`
 var HELPER = (function (O) {
   var
-    gOPD = O.getOwnPropertyDescriptor,
     gPO = O.getPrototypeOf || function (o) { return o.__proto__; },
     sPO = O.setPrototypeOf || function (o, p) { o.__proto__ = p; return o; },
     construct = typeof Reflect === 'object' ?
@@ -82,7 +81,11 @@ export default function (babel) {
       },
     },
     post() {
-      if (name) console.info(' ✔ builtin extends patched');
+      if (
+        name &&
+        typeof process === 'object' &&
+        process.argv.some(a => /^--log-when-patched$/.test(a))
+      ) console.info(' ✔ builtin extends patched');
     }
   };
 
