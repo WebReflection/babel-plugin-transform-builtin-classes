@@ -84,7 +84,8 @@ export default function (babel) {
       if (
         name &&
         typeof process === 'object' &&
-        process.argv.some(a => /^--log-when-patched$/.test(a))
+        process.argv.some(a => /^-d|-o|--out-dir|--out-file$/.test(a)) &&
+        !process.argv.some(a => /^-q|--quiet$/.test(a))
       ) console.info(' ✔ builtin extends patched');
     }
   };
