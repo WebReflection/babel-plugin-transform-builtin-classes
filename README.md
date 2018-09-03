@@ -2,6 +2,12 @@
 
 [![Build Status](https://travis-ci.org/WebReflection/babel-plugin-transform-builtin-classes.svg?branch=master)](https://travis-ci.org/WebReflection/babel-plugin-transform-builtin-classes) [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/WebReflection/donate)
 
+### About Babel 7
+
+Babel 7 included this plugin in core so you don't need this plugin anymore.
+
+- - -
+
 Inspired by [Logan Smyth transformer](https://github.com/loganfsmyth/babel-plugin-transform-builtin-extend),
 but actually very different.
 
